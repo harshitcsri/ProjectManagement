@@ -19,6 +19,8 @@
 
     <!-- Custom styles for this template-->
     <link href="/css/sb-admin-2.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/sb-admin-2.min.css">
+    <link href="/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
 
 </head>
 
@@ -65,8 +67,8 @@
                 </a>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item active" href="/addProject">Add Projects</a>
-                        <a class="collapse-item" href="/manageProject">Manage Projects</a>
+                        <a class="collapse-item" href="/addProject">Add Projects</a>
+                        <a class="collapse-item active" href="/manageProject">Manage Projects</a>
                     </div>
                 </div>
             </li>
@@ -284,55 +286,47 @@
                 </nav>
                 <!-- End of Topbar -->
 
-                <!-- Begin Page Content -->
                 <div class="container-fluid">
+                    <!-- Project Table -->
 
-                    <!-- Page Heading -->
+                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">Add Project</h1>
+                        <h1 class="h3 mb-0 text-gray-800">Manage Project</h1>
                     </div>
 
-                    <!-- Content Row -->
-                    <div class="row">
 
-                        <div class="col-lg-7">
-                            <div class="p-5">
-                                <form class="user">
-                                    <div class="form-group row">
-                                        <div class="col-sm-6 mb-3 mb-sm-0">
-                                            <input type="text" class="form-control form-control-user" id="exampleFirstName"
-                                                placeholder="Project Name">
-                                        </div>
-                                        <div class="col-sm-6">
-                                            <input type="text" class="form-control form-control-user" id="exampleLastName"
-                                                placeholder="Last Name">
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="email" class="form-control form-control-user" id="exampleInputEmail"
-                                            placeholder="Email Address">
-                                    </div>
-                                    <div class="form-group row">
-                                        <div class="col-sm-6 mb-3 mb-sm-0">
-                                            <input type="password" class="form-control form-control-user"
-                                                id="exampleInputPassword" placeholder="Password">
-                                        </div>
-                                        <div class="col-sm-6">
-                                            <input type="password" class="form-control form-control-user"
-                                                id="exampleRepeatPassword" placeholder="Repeat Password">
-                                        </div>
-                                    </div>
-                                    <a href="#" class="btn btn-primary btn-user btn-block">
-                                        Submit
-                                    </a>
-                                </form>
+                    <div class="card shadow mb-4 project-datatable">
+                        <div class="card-header py-3">
+                            <h6 class="m-0 font-weight-bold text-primary">Project Name</h6>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                    <thead>
+                                        <tr>
+                                            <th>Ticket No</th>
+                                            <th>Title</th>
+                                            <th>Assign To</th>
+                                            <th>Assigned By</th>
+                                            <th>Assigned Date/Time</th>
+                                            <th>Status</th>
+                                            <th>Estimate Date/Time</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <td>9879448449</td>
+                                        <td>test Titlr</td>
+                                        <td>Shivam </td>
+                                        <td>Harshit</td>
+                                        <td></td>
+                                        <td>Open</td>
+                                        <td></td>
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
-
-                    </div>  
-
+                    </div>
                 </div>
-                <!-- /.container-fluid -->
 
             </div>
             <!-- End of Main Content -->
@@ -395,6 +389,14 @@
     <script src="/js/demo/chart-area-demo.js"></script>
     <script src="/js/demo/chart-pie-demo.js"></script>
 
+    <script src="/CustomeJS/Custome.js"></script>
+
+    <!-- Page level plugins -->
+    <script src="/vendor/datatables/jquery.dataTables.min.js"></script>
+    <script src="/vendor/datatables/dataTables.bootstrap4.min.js"></script>
+ 
+     <!-- Page level custom scripts -->
+    <script src="/js/demo/datatables-demo.js"></script>
 </body>
 
 </html>

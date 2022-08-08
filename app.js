@@ -5,11 +5,13 @@ const expressEjsLayout = require('express-ejs-layouts')
 const flash = require('connect-flash');
 const session = require('express-session');
 const passport = require("passport");
+const path = require('path');
 require('./db');
 require('./config/passport')(passport)
 app.use(express.static(__dirname + '/public'));
 //EJS
-app.set('view engine','ejs');
+app.set('Views', path.join(__dirname, 'Views'));
+app.set('view engine', 'ejs');
 app.use(expressEjsLayout);
 //BodyParser
 app.use(express.urlencoded({extended : false}));
