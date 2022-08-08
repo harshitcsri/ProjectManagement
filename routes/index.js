@@ -14,4 +14,10 @@ router.get('/dashboard',ensureAuthenticated,(req,res)=>{
         user: req.user
     });
 })
+
+router.get('/addProject', ensureAuthenticated,(req,res)=>{
+    res.render('AddProject',{
+        user: req.user
+    });
+});
 module.exports = router; 
