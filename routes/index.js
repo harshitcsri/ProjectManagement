@@ -34,4 +34,10 @@ router.get('/projectDetail', ensureAuthenticated,(req,res)=>{
     });
 });
 
+router.get('/addUser',ensureAuthenticated,(req,res)=>{
+    res.render('AddUser',{
+        user:req.user
+    })
+});
+
 module.exports = router; 
