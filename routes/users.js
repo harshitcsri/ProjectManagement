@@ -85,5 +85,12 @@ req.flash('success_msg','Now logged out');
 res.redirect('/users/login'); 
 })
 
-router.post('/saveProject', ProjectController.saveProject)
+router.post('/saveProject', ProjectController.saveProject);
+
+router.get('/getProject', ProjectController.getProjects);
+
+router.get('/projectDetail', (req, res) => {
+    res.render('ProjectDetail');
+})
+
 module.exports  = router; 

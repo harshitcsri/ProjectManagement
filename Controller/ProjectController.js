@@ -27,6 +27,18 @@ async function saveProject(req, res, next) {
 
 }
 
+async function getProjects(req, res, next) {
+    try{
+        const project = await Project.find(req.query);
+        if(project){
+            return res.json({ status: 200, message: 'PROJECT_FETCHED', data: project })
+        }else{
+            return res.json({ status: 400, message: 'PROJECT_NOT_FETCHED' })
+        }
+    }catch(error){
+        console.log(error)
+        return res.json({ status: 500, message: 'ERROR_OCCURED', error })
+    }
+}
 
-
-module.exports = { saveProject: saveProject }
+module.exports = { saveProject, getProjects }
