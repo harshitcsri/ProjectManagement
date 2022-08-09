@@ -3,6 +3,7 @@ const router = express.Router();
 const User = require("../models/user");
 const bcrypt = require('bcrypt');
 const passport = require('passport');
+const ProjectController = require('../Controller/ProjectController');
 //login handle
 router.get('/login',(req,res)=>{
     res.render('login');
@@ -83,4 +84,6 @@ req.logout();
 req.flash('success_msg','Now logged out');
 res.redirect('/users/login'); 
 })
-module.exports  = router;
+
+router.post('/saveProject', ProjectController.saveProject)
+module.exports  = router; 

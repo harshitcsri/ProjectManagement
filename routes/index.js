@@ -33,4 +33,5 @@ router.get('/projectDetail', ensureAuthenticated,(req,res)=>{
         user: req.user
     });
 });
+
 module.exports = router; 

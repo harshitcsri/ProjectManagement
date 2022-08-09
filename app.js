@@ -8,6 +8,7 @@ const passport = require("passport");
 const path = require('path');
 require('./db');
 require('./config/passport')(passport)
+app.use(express.json());
 app.use(express.static(__dirname + '/public'));
 //EJS
 app.set('Views', path.join(__dirname, 'Views'));
