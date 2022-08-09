@@ -90,3 +90,11 @@ router.get('/logout', (req, res) => {
 router.post('/saveProject', ProjectController.saveProject);
 router.post('/saveUser', UserController.saveUser);
 module.exports = router; 
+
+router.get('/getProject', ProjectController.getProjects);
+
+router.get('/projectDetail', (req, res) => {
+    res.render('ProjectDetail');
+})
+
+module.exports  = router; 
