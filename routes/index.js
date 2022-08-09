@@ -21,6 +21,7 @@ router.get('/addProject', ensureAuthenticated,(req,res)=>{
     });
 });
 
+
 router.get('/manageProject', ensureAuthenticated,(req,res)=>{
     res.render('ManageProjects',{
         user: req.user
