@@ -13,13 +13,7 @@ router.get('/register', (req, res) => {
     res.render('register')
 })
 //Register handle
-router.post('/login', (req, res, next) => {
-    passport.authenticate('local', {
-        successRedirect: '/dashboard',
-        failureRedirect: '/users/login',
-        failureFlash: true
-    })(req, res, next)
-})
+router.post('/login', UserController.getUser)
 //register post handle
 router.post('/register', (req, res) => {
     const { name, email, password, password2 } = req.body;
@@ -82,9 +76,11 @@ router.post('/register', (req, res) => {
 })
 //logout
 router.get('/logout', (req, res) => {
-    req.logout();
-    req.flash('success_msg', 'Now logged out');
-    res.redirect('/users/login');
+    if(req.session.userid){
+        // console.log(req.params.id);
+        req.session.destroy();
+        res.render('login');
+    }
 })
 
 router.post('/saveProject', ProjectController.saveProject);
@@ -94,7 +90,10 @@ module.exports = router;
 router.get('/getProject', ProjectController.getProjects);
 
 router.get('/projectDetail', (req, res) => {
+    
     res.render('ProjectDetail');
 })
+
+router.get('/getUserDetail', UserController.getUserById);
 
 module.exports  = router; 
